@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse, reverse_lazy
 
 from .models import Usuarios
+from Estudiantes.models import Estudiantes
 
 from .forms import UsuariosForm, LoginForm
 
@@ -12,18 +13,23 @@ from .forms import UsuariosForm, LoginForm
 def login(request):
     context = {}
     NewLoginForm = LoginForm()
+
     #Checar POST
     if request.method == 'POST':
         NewLoginForm = LoginForm(request.POST)
         UserValid = NewLoginForm.is_valid()
+
         #Checar que la forma sea valida
         if UserValid:
             Usu = NewLoginForm.save(commit=False)
+
             #Checar que el usuario sea Administrador
             emailValid = Usuarios.objects.filter(Email=Usu.Email, Passwd=Usu.Passwd)
-            #Checar que el usuario y la contrasenia esten en la BD
+            alumnoValid = Estudiantes.objects.filter(Correo=Usu.Email, Passwd=Usu.Passwd)
             if emailValid.count() > 0:
                 return render(request, 'Index/dashboard_admin.html', context)
+            elif alumnoValid.count() > 0:
+                return render(request, 'Index/dashboard_alumno.html', context)
 
         context = {
             'NewLoginForm': NewLoginForm
@@ -34,29 +40,6 @@ def login(request):
         'NewLoginForm': NewLoginForm
     }
     return render(request, 'Index/login.html', context)
-
-    # context = {}
-    # if request == 'POST':
-    #     email = request.POST['Email']
-    #     password = request.POST.get('Password')
-    #     user = Usuarios.objects.filter(Email=email)
-    #     if user.count() > 0:
-    #         return render(request, 'Index/dashboard_admin.html', context)
-    # return render(request, 'Index/login.html', context)
-
-    # email = request.POST.get('Email', False)
-    # password = request.POST.get('Password', False)
-    # user = Usuarios.objects.filter(Email=email)
-    # if user.count() > 0:
-    #     user = Usuarios.objects.filter(Email=email, Passwd=password)
-    #     if user.count() > 0:
-    #         context ={}
-    #         return render(request, 'Index/login.html',context)
-    #     else:
-    #         return HttpResponseRedirect(reversed('Index/login.html'))
-    # else:
-    #     return HttpResponseRedirect(reversed('Index/login.html'))
-
 
 def user_lists(request):
     all_users = Usuarios.objects.all()

@@ -50,3 +50,8 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+#Database
+db.sqlite3
+
+*.pyc
+
