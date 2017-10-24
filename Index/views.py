@@ -4,3 +4,7 @@ from django.shortcuts import render
 def Index(request):
 	context = {}
 	return render(request, 'Index/dashboard_admin.html', context)
+
+def Index_alumno(request):
+	context = {}
+	return render(request, 'Index/dashboard_alumno.html', context)
