@@ -12,7 +12,7 @@ def inst_lists(request):
     context ={
         'all_inst': all_inst
         }
-    return render(request, 'SSInstituciones/instituciones_list.html',context)
+    return render(request, 'SSInstituciones/clases_list.html',context)
 
 def inst_delete(request, pk):
     inst = Instituciones.objects.filter(institucionID=pk)
@@ -43,10 +43,10 @@ def inst_create(request):
     context = {
         'NewInstForm': NewInstForm
     }
-    return render(request, 'SSInstituciones/instituciones_form.html', context)
+    return render(request, 'SSInstituciones/clases_form.html', context)
 
     # if a GET (or any other method) we'll create a blank form
-    return render(request, 'SSInstituciones/instituciones_form.html', context)
+    return render(request, 'SSInstituciones/clases_form.html', context)
 
 
 
@@ -59,6 +59,6 @@ class inst_update(UpdateView):
         'coordenadaX',
         'coordenadaY'
     ]
-    template_name = 'SSInstituciones/instituciones_edit_form.html'
+    template_name = 'SSInstituciones/clases_edit_form.html'
 
     success_url = reverse_lazy('Ssinstituciones:inst_lists')
