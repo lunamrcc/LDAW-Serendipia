@@ -2,6 +2,7 @@
 {% load widget_tweaks %}
 {% block content %}
 
+
 <div class="container">
     <br>
     <h3 class="center green-text text-accent-2"> Clases - Crear Clase </h3>
@@ -26,8 +27,15 @@
                 {{ NewClassForm.requisitos | add_class:'form-control' }}
             </div>
         </div>
-        <button type="submit" class="waves-light btn green accent-2">Agregar Clases</button>
+        <div class="input-field col s11">
+            <label for="Estudiante"></label>
+            {{ NewClassForm.estudiantes | add_class:'form-control'}}
+        </div>
+        <div>
+            <button type="submit" class="waves-light btn green accent-2">Agregar Clases</button>
+        </div>
     </form>
+
 </div>
 
 {% endblock content %}
