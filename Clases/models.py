@@ -1,4 +1,5 @@
 from django.db import models
+from Estudiantes.models import Estudiantes
 
 # Create your models here.
 
@@ -20,6 +21,10 @@ class Clases (models.Model):
     requisitos = models.CharField(
         max_length = 500,
         null = False
+    )
+
+    estudiantes = models.ManyToManyField(
+        Estudiantes,
     )
 
     def __str__(self):
