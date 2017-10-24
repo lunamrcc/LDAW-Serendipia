@@ -29,6 +29,9 @@ def login(request):
             if emailValid.count() > 0:
                 return render(request, 'Index/dashboard_admin.html', context)
             elif alumnoValid.count() > 0:
+                context = {
+                    'Estudiante': alumnoValid
+                }
                 return render(request, 'Index/dashboard_alumno.html', context)
 
         context = {

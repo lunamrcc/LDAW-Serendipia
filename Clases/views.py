@@ -8,6 +8,7 @@ from .forms import ClassForm
 
 
 # Create your views here.
+#administrador
 def class_lists(request):
     all_class = Clases.objects.all()
     context ={
@@ -60,3 +61,6 @@ class class_update(UpdateView):
     template_name = 'Clases/clases_edit_form.html'
 
     success_url = reverse_lazy('Clases:class_lists')
+
+#estudiante
+#def class student_class_lists(re)

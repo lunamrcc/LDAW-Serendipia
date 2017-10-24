@@ -17,6 +17,9 @@ urlpatterns = [
     # administrador/clases_editar/3
     url(r'^_editar/(?P<pk>[0-9]+)/', views.class_update.as_view(), name='class_update')
 
+    # estudiante/clases
+
+
 ]
 
 
