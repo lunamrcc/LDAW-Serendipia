@@ -1,6 +1,9 @@
 from .models import Usuarios
 from django import forms
 
+class PasswordInput(forms.PasswordInput):
+    input_type = 'password'
+
 class UsuariosForm(forms.ModelForm):
     class Meta:
         model = Usuarios
@@ -11,3 +14,6 @@ class LoginForm(forms.ModelForm):
         model = Usuarios
         Passwd = forms.CharField(widget=forms.PasswordInput)
         fields = ('Email', 'Passwd')
+        widgets = {
+            'Passwd': PasswordInput()
+        }
