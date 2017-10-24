@@ -32,7 +32,9 @@ urlpatterns = [
     url(r'^administrador/estudiantes/', include('Estudiantes.urls', namespace='estudiantes')),
     url(r'^administrador/instituciones/', include('Instituciones.urls', namespace='instituciones')),
     url(r'^administrador/ssinst', include('SSInstituciones.urls', namespace='ssinstituciones')),
+    url(r'^administrador/clases', include('Clases.urls', namespace='clases')),
 
     #alumnos
     url(r'^alumnos/', include('Index.urls_alumnos', namespace='alumnos')),
+
 ]
