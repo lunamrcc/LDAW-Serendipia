@@ -1,0 +1,16 @@
+{% extends 'base_alumno.html' %}
+
+{% block content %}
+{% load static %}
+
+    <div class="container">
+        <img id="AdminMiCuenta" src="{% static "Index/img/Estudiante/Index_MiCuenta_alumno.png" %}"/>
+        <img id="AdminEstudiante" src="{% static "Index/img/Estudiante/Index_Clases_alumno.png" %}"/>
+        <img id="AdminAsistencias" src="{% static "Index/img/Estudiante/Index_Asistencias_estudiante.png" %}"/>
+        <!--<img id="AdminClases" src="{% static "Index/img/Admin/Index_Estudiantes2.png" %}"/>-->
+        <!--<img id="AdminInstituciones" src="{% static "Index/img/Admin/Index_Instituciones2.png" %}"/>-->
+        <!--/img/Admin/Index_Reportes2.png" %}"/>-->
+        <!--<a href="{% url 'Usuarios:user_lists' %}"><img id="AdminUsuarios" src="{% static "Index/img/Admin/Index_Usuarios2.png" %}"/> </a>-->
+    </div>
+
+{% endblock content %}
