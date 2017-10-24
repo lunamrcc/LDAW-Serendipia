@@ -11,14 +11,17 @@ class Clases(models.Model):
         max_length = 50,
         null = False
     )
+
     descripcion = models.CharField(
         max_length = 500,
         null = False
     )
+
     horario = models.CharField(
         max_length = 100,
         null = False
     )
+
     requisitos = models.CharField(
         max_length = 500,
         null = False
