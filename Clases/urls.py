@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^crear/$', views.class_create, name='class_create'),
 
     # administrador/clases_editar/3
-    url(r'^_editar/(?P<pk>[0-9]+)/', views.class_update.as_view(), name='class_update')
+    url(r'^_editar/(?P<pk>[0-9]+)/', views.class_update.as_view(), name='class_update'),
 
     # estudiante/clases
 

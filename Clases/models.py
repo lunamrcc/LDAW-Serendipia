@@ -71,4 +71,4 @@ class Asistencia(models.Model):
     )
 
     def __str__(self):
-        return self.Fecha
+        return str(self.Fecha)

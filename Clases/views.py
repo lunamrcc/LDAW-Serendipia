@@ -7,7 +7,11 @@ from django.views.generic import UpdateView
 from .forms import ClassForm
 
 
-# Create your views here.
+def assistance_lists(request):
+    context = {}
+    return render(request, 'Clases/asistencia_list.html', context)
+
+
 #administrador
 def class_lists(request):
     all_class = Clases.objects.all()
@@ -63,4 +67,5 @@ class class_update(UpdateView):
     success_url = reverse_lazy('Clases:class_lists')
 
 #estudiante
-#def class student_class_lists(re)
+#def class student_class_lists
+
