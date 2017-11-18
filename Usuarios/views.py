@@ -23,11 +23,18 @@ def login(request):
         if UserValid:
             Usu = NewLoginForm.save(commit=False)
 
-            #Checar que el usuario sea Administrador
-            emailValid = Usuarios.objects.filter(Email=Usu.Email, Passwd=Usu.Passwd)
+            #Checar que el usuario sea Administrador, Estudiante o SSAdmin
+
+            emailValid = Usuarios.objects.filter(Email=Usu.Email, Passwd=Usu.Passwd, Activo=True)
             alumnoValid = Estudiantes.objects.filter(Correo=Usu.Email, Passwd=Usu.Passwd)
-            if emailValid.count() > 0:
+            if emailValid.count() == 1:
+                #if emailValid.count<2:
                 return render(request, 'Index/dashboard_admin.html', context)
+                #elif emailValid.count>2:
+                   # return render(request, 'Index/dashboard_SSAdmin.html', context)
+            elif emailValid.count() ==2:
+                return render(request, 'Index/dashboard_SSAdmin.html', context)
+
             elif alumnoValid.count() > 0:
                 context = {
                     'Estudiante': alumnoValid
@@ -44,6 +51,7 @@ def login(request):
     }
     return render(request, 'Index/login.html', context)
 
+
 def user_lists(request):
     all_users = Usuarios.objects.all()
     context ={
@@ -51,6 +59,8 @@ def user_lists(request):
         }
     return render(request, 'Usuarios/usuarios_list.html',context)
 
+#def SS_user_lists (request):
+    #ss_users = Usuarios.objects.filter(institucionID)
 
 def user_create(request):
     context = {}

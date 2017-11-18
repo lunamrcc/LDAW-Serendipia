@@ -2,7 +2,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-        margin-top: 25%;
+    margin-top: 25%;
     width: 19%;
 }
 
@@ -50,5 +50,21 @@
     margin-left: 50.7%;
     margin-right: auto;
     margin-top: -22%;
+    width: 19%;
+}
+#AdminSSAdmin{
+    display: block;
+    margin-left: 50.7%;
+    margin-right: auto;
+    margin-top: -22%;
+    width: 19%;
+
+}
+
+#SSAdminInstituciones{
+    display: block;
+    margin-left: 20.2%;
+    margin-right: auto;
+    margin-top: -21.7%;
     width: 19%;
 }

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base_SSAdmin.html' %}
 
 {% block content %}
 {% load static %}
@@ -8,12 +8,9 @@
         <a href="{% url 'Estudiantes:student_lists' %}"><img id="AdminEstudiante" src="{% static "Index/img/Admin/Estudiantes.png" %}"/> </a>
         <img id="AdminAsistencias" src="{% static "Index/img/Admin/Asistencias.png" %}"/>
         <img id="AdminClases" src="{% static "Index/img/Admin/Clases.png" %}"/>
-        <a href="{% url 'Instituciones:inst_lists' %}"><img id="AdminInstituciones" src="{% static "Index/img/Admin/Instituciones.png" %}"/></a>
+        <a href="{% url 'Instituciones:inst_SS_lists' %}"><img id="AdminInstituciones" src="{% static "Index/img/Admin/Instituciones.png" %}"/></a>
         <img id="AdminReportes" src="{% static "Index/img/Admin/Reportes.png" %}"/>
-        <a href="{% url 'Usuarios:user_lists' %}"><img id="AdminUsuarios" src="{% static "Index/img/Admin/Usuarios.png" %}"/> </a>
-    <!-- <a href="{% url 'Usuarios:user_lists' %}"><img id="AdminSSAdmin" src="{% static "Index/img/Admin/ssAdmin.png" %}"/> </a> -->
-
-
+        <a href="{% url 'Usuarios:user_lists' %}"><img id="AdminSSAdmin" src="{% static "Index/img/Admin/ssAdmin.png" %}"/> </a>
     </div>
 
 {% endblock content %}

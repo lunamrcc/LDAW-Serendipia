@@ -6,10 +6,6 @@ app_name = 'Index'
 
 urlpatterns = [
 
-    #/administrador/
-    url(r'^$', views.Index, name='dashboard'),
-
-
-
-
+    #/SSAdmin/
+    url(r'^$', views.Index_SSAdmin, name='dashboard_SSAdmin'),
 ]

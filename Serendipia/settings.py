@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'Usuarios.apps.UsuariosConfig',
     'Instituciones.apps.InstitucionesConfig',
     'widget_tweaks',
-    'SSInstituciones.apps.SsinstitucionesConfig',
     'Clases.apps.ClasesConfig',
 ]
 

@@ -31,9 +31,12 @@ urlpatterns = [
     url(r'^administrador/usuarios/', include('Usuarios.urls', namespace='usuarios')),
     url(r'^administrador/estudiantes/', include('Estudiantes.urls', namespace='estudiantes')),
     url(r'^administrador/instituciones/', include('Instituciones.urls', namespace='instituciones')),
-    url(r'^administrador/ssinst', include('SSInstituciones.urls', namespace='ssinstituciones')),
     url(r'^administrador/clases', include('Clases.urls', namespace='clases')),
     url(r'^administrador/asistencia', include('Clases.urls_assistance', namespace='asistance')),
+
+    #SSAdmin
+    url(r'^SSAdmin/', include('Index.urls_SSAdmin', namespace='SSAdmin')),
+    url(r'^SSAdmin/instituciones/', include('Instituciones.urls', namespace='instituciones')),
 
     #alumnos
     url(r'^alumnos/', include('Index.urls_alumnos', namespace='alumnos')),

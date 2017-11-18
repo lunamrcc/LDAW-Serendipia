@@ -8,6 +8,9 @@ urlpatterns = [
     #administrador/instituciones
     url(r'^$', views.inst_lists, name='inst_lists'),
 
+    # SSadmin/instituciones
+    url(r'^$', views.inst_SS_lists, name='inst_SS_lists'),
+
     #administrador/instituciones/3/delete
     url(r'^(?P<pk>[0-9]+)/eliminar/$', views.inst_delete, name='inst_delete'),
 

@@ -1,0 +1,41 @@
+{% extends 'base_SSAdmin.html' %}
+
+{% block content %}
+{% load static %}
+
+    <div class="container">
+        <br>
+        <h3 class="center green-text text-accent-2"> Usuarios </h3>
+        <br> <br> <br>
+
+        <table class="highlight responsive-table">
+            <thead class="thead-default">
+                <tr>
+                    <th class="center-align">Nombre</th>
+                    <th class="center-align">Apellidos</th>
+                    <th class="center-align">Telefono</th>
+                    <th class="center-align">Email</th>
+                    <th class="center-align">Funcionalidades</th>
+                    <th class="center-align">Activo</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in all_users %}
+
+            <tr>
+                <td class="center-align">{{user.Nombre}}</td>
+                <td class="center-align">{{user.Apaterno}} {{user.Amaterno}}</td>
+                <td class="center-align">{{user.Telefono}}</td>
+                <td class="center-align">{{user.Email}}</td>
+
+
+            </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+{% endblock content %}

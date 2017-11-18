@@ -15,6 +15,13 @@ def inst_lists(request):
         }
     return render(request, 'Instituciones/instituciones_list.html',context)
 
+def inst_SS_lists(request):
+    all_inst = Instituciones.objects.all()
+    context ={
+        'all_inst': all_inst
+        }
+    return render(request, 'Instituciones/instituciones_SS_list.html',context)
+
 def inst_delete(request, pk):
     inst = Instituciones.objects.filter(pk=pk)
     inst.delete()
