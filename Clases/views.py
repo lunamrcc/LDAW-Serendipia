@@ -56,7 +56,8 @@ class class_update(UpdateView):
         'nombre',
         'descripcion',
         'horario',
-        'requisitos'
+        'requisitos',
+        'estudiantes',
     ]
     template_name = 'Clases/clases_edit_form.html'
 
