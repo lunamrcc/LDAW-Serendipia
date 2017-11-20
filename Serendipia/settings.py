@@ -41,9 +41,10 @@ INSTALLED_APPS = [
     'Estudiantes.apps.EstudiantesConfig',
     'Usuarios.apps.UsuariosConfig',
     'Instituciones.apps.InstitucionesConfig',
-    'widget_tweaks',
     'SSInstituciones.apps.SsinstitucionesConfig',
     'Clases.apps.ClasesConfig',
+    'reportes',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

@@ -34,6 +34,9 @@ urlpatterns = [
     url(r'^administrador/ssinst', include('SSInstituciones.urls', namespace='ssinstituciones')),
     url(r'^administrador/clases', include('Clases.urls', namespace='clases')),
 
+    #Prueba
+    url(r'^administrador/reportes', include('reportes.urls', namespace='reportes')),
+
     #alumnos
     url(r'^alumnos/', include('Index.urls_alumnos', namespace='alumnos')),
 
