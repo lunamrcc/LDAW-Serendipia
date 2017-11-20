@@ -67,7 +67,7 @@ class Asistencia(models.Model):
 
     Horas = models.IntegerField(
         null = True,
-        blank = True
+        default=0
     )
 
     def __str__(self):
