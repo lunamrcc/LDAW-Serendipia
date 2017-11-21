@@ -8,3 +8,6 @@ def Index(request):
 def Index_alumno(request):
 	context = {}
 	return render(request, 'Index/dashboard_alumno.html', context)
+def Index_ssadmin(request):
+	context = {}
+	return render(request, 'Index/dashboard_ssadmin.html', context)

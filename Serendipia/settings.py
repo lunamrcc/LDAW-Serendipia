@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'SSInstituciones.apps.SsinstitucionesConfig',
     'Clases.apps.ClasesConfig',
+    'SSClases.apps.SsclasesConfig',
+    'SSEstudiantes.apps.SsestudiantesConfig',
+    'SSUsuarios.apps.SsusuariosConfig',
 ]
 
 MIDDLEWARE = [

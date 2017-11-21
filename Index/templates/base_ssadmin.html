@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Serendipia</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Import CSS (Materialize, Freelancer)-->
+    <link type="text/css" href="{% static "Index/css/materialize.min.css" %}" rel="stylesheet" media="screen,projection">
+    <link type="text/css" href="{% static "Index/css/freelancer.css" %}" rel="stylesheet" media="screen,projection">
+
+
+</head>
+
+<body class="white">
+
+  <nav>
+    <div class="blue lighten-1 nav-wrapper">
+      <a href="{% url 'ssadmin:dashboard_ssadmin' %}" class="brand-logo center">
+          <img id="Logo" width="40%" src="{% static "Index/img/Logo.png" %}">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="{% url 'login' %}"><i class="material-icons">settings_power</i>Cerrar Sesión</a></li>
+  </ul>
+    </div>
+  </nav>
+
+  {% block content %}
+
+  {% endblock content %}
+
+</body>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="{% static "Index/js/materialize.min.js" %}"></script>
+<script type="text/javascript" src="{% static "Index/js/script.js" %}"></script>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'base_ssadmin.html' %}
+
+{% block content %}
+{% load static %}
+
+    <div class="container">
+        <img id="AdminMiCuenta" src="{% static "Index/img/SSAdmin/Index_MiCuenta2.png" %}"/>
+        <a href="{% url 'SSEstudiantes:student_lists' %}">
+            <img id="AdminEstudiante" src="{% static "Index/img/SSAdmin/Index_Estudiantes2.png" %}"/> </a>
+        <a href="{% url 'Assistance:assistance_lists' %}">
+            <img id="AdminAsistencias" src="{% static "Index/img/SSAdmin/Index_Asistencias2.png" %}"/> </a>
+        <a href="{% url 'SSClases:class_lists' %}">
+            <img id="AdminClases" src="{% static "Index/img/SSAdmin/Index_Clases2.png" %}"/> </a>
+        <a href="{% url 'Ssinstituciones:inst_lists' %}">
+            <img id="AdminInstituciones" src="{% static "Index/img/SSAdmin/Index_Instituciones2.png" %}"/> </a>
+        <a>
+            <img id="AdminReportes" src="{% static "Index/img/SSAdmin/Index_Reportes2.png" %}"/> </a>
+        <a href="{% url 'SSUsuarios:user_lists' %}">
+            <img id="AdminUsuarios" src="{% static "Index/img/SSAdmin/Index_Usuarios2.png" %}"/> </a>
+    </div>
+
+{% endblock content %}
