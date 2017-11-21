@@ -38,7 +38,7 @@ urlpatterns = [
     #SSAdmin
     url(r'^ss/clases/', include('SSClases.urls', namespace='ssclases')),
     url(r'^ss/estudiantes/', include('SSEstudiantes.urls', namespace='ssestudiantes')),
-
+    url(r'^ss/usuarios/', include('SSUsuarios.urls', namespace='ssusuarios')),
 
 
     #alumnos

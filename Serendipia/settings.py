@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'Clases.apps.ClasesConfig',
     'SSClases.apps.SsclasesConfig',
     'SSEstudiantes.apps.SsestudiantesConfig',
+    'SSUsuarios.apps.SsusuariosConfig',
 ]
 
 MIDDLEWARE = [
