@@ -4,13 +4,12 @@
 {% load static %}
 
     <div class="container">
+        <br>
+        <h3 class="center pink-text text-accent-2"> Bienvenido {{ Estudiante.Nombre }} </h3>
         <img id="AdminMiCuenta" src="{% static "Index/img/Estudiante/Index_MiCuenta_alumno.png" %}"/>
-        <img id="AdminEstudiante" src="{% static "Index/img/Estudiante/Index_Clases_alumno.png" %}"/>
+        <a href="{% url 'alumnos_clases:student_class' Estudiante.EstudianteID %}">
+        <img id="AdminEstudiante" src="{% static "Index/img/Estudiante/Index_Clases_alumno.png" %}"/></a>
         <img id="AdminAsistencias" src="{% static "Index/img/Estudiante/Index_Asistencias_estudiante.png" %}"/>
-        <!--<img id="AdminClases" src="{% static "Index/img/Admin/Index_Estudiantes2.png" %}"/>-->
-        <!--<img id="AdminInstituciones" src="{% static "Index/img/Admin/Index_Instituciones2.png" %}"/>-->
-        <!--/img/Admin/Index_Reportes2.png" %}"/>-->
-        <!--<a href="{% url 'Usuarios:user_lists' %}"><img id="AdminUsuarios" src="{% static "Index/img/Admin/Index_Usuarios2.png" %}"/> </a>-->
     </div>
 
 {% endblock content %}

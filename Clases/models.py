@@ -1,5 +1,6 @@
 from django.db import models
 from Estudiantes.models import Estudiantes
+from Instituciones.models import Instituciones
 from Serendipia import settings
 
 # Create your models here.
@@ -29,6 +30,11 @@ class Clases(models.Model):
 
     estudiantes = models.ManyToManyField(
         Estudiantes,
+    )
+
+    institucion = models.ManyToManyField(
+        Instituciones,
+
     )
 
     def __str__(self):

@@ -1,11 +1,11 @@
 {% extends 'base_alumno.html' %}
 
-% block content %}
+{% block content %}
 {% load static %}
 
     <div class="container">
         <br>
-        <h3 class="center pink-text text-accent-2"> Clases </h3>
+        <h3 class="center pink-text text-accent-2">Clases</h3>
         <br> <br> <br>
         <table class="highlight responsive-table">
             <thead class="thead-default">
@@ -25,16 +25,11 @@
                 <td class="center-align">{{class.descripcion}}</td>
                 <td class="center-align">{{class.horario}}</td>
                 <td class="center-align">{{class.requisitos}}</td>
-
                 <td class="center-align">
-                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar Clase"
-                        href="{% url 'Clases:class_update' class.pk %}">
-                        <i class="material-icons light-blue-text">create</i>
-                    </a>&nbsp; &nbsp; &nbsp; &nbsp;
-                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Eliminar Clase"
-                       href="{% url 'Clases:class_delete' class.pk %}">
-                        <i class="material-icons red-text">delete</i>
-                    </a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a id="location" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Pasar Lista"
+                        href="{% url 'alumnos_clases:student_assistance' %}">
+                        <i class="material-icons red-text">add_location</i>
+                    </a>
                 </td>
             {% endfor %}
 
@@ -43,5 +38,37 @@
     </div>
 
 
+<!--<script>
+
+    var lat = 500;
+    var lon = 400;
+    var url_mask = '{% url \'alumnos_clases:student_assistance\' Estudiante.EstudianteID class.pk lat=123'.replace(/123/, lat.toString());
+    url_mask +=' lon=123 %}'.replace(/123/, lon.toString());
+
+    //document.getElementById("location").setAttribute("href", url_mask);
+
+function getLocationLat() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition();
+    } else {
+        var x = "Geolocation is not supported by this browser.";
+    }
+}
+
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        var x = "Geolocation is not supported by this browser.";
+    }
+
+}
+
+function showPosition(position) {
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+}
+</script>-->
 
 {% endblock content %}

@@ -37,5 +37,6 @@ urlpatterns = [
 
     #alumnos
     url(r'^alumnos/', include('Index.urls_alumnos', namespace='alumnos')),
+    url(r'^alumnos/clases', include('Clases.urls_alumnos', namespace='alumnos_clases')),
 
 ]

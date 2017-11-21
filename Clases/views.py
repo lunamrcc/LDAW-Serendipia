@@ -1,4 +1,6 @@
-from .models import Clases
+from .models import Clases, Asistencia
+from Estudiantes.models import Estudiantes
+
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse, reverse_lazy
@@ -67,6 +69,29 @@ class class_update(UpdateView):
 
     success_url = reverse_lazy('Clases:class_lists')
 
-#estudiante
-#def class student_class_lists
 
+
+#estudiante
+
+def student_class_lists(request, pk):
+    all_class = Clases.objects.filter(estudiantes=(Estudiantes.objects.get(EstudianteID=pk)))
+    estudiante = Estudiantes.objects.get(EstudianteID=pk)
+    context = {
+        'Estudiante': estudiante,
+        'all_class': all_class
+    }
+    return render(request, 'Clases/student_clases_list.html', context)
+
+def student_assistance(request, pk):
+    # estudiante = Estudiantes.objects.get(EstudianteID=pk)
+    # context = {
+    #     'Estudiante': estudiante,
+    # }
+
+    all_class = Clases.objects.filter(estudiantes=(Estudiantes.objects.get(EstudianteID=pk)))
+    estudiante = Estudiantes.objects.get(EstudianteID=pk)
+    context = {
+        'Estudiante': estudiante,
+        'all_class': all_class
+    }
+    return render(request, 'Clases/student_assistance.html', context)
