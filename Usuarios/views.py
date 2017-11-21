@@ -109,5 +109,3 @@ def user_change_status(request, pk):
         user.Activo = True
         user.save()
     return HttpResponseRedirect(reverse('Usuarios:user_lists'))
-
-

@@ -17,7 +17,7 @@
                     <th class="center-align">Teléfono</th>
                     <th class="center-align">Latitud</th>
                     <th class="center-align">Longitud</th>
-                    <!--<th class="center-align">Funcionalidades</th>-->
+                    <th class="center-align">Funcionalidades</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,7 +30,7 @@
                 <td class="center-align">{{inst.coordenadaX}}</td>
                 <td class="center-align">{{inst.coordenadaY}}</td>
 
-                <!--<td class="center-align">
+                <td class="center-align">
                     <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar Usuario"
                         href="{% url 'Ssinstituciones:inst_update' inst.institucionID %}">
                         <i class="material-icons light-blue-text">create</i>
@@ -39,7 +39,7 @@
                        href="{% url 'Ssinstituciones:inst_delete' inst.institucionID %}">
                         <i class="material-icons red-text">delete</i>
                     </a> &nbsp; &nbsp; &nbsp; &nbsp;
-                </td>-->
+                </td>
             {% endfor %}
 
             </tbody>
