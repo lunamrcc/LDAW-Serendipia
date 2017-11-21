@@ -24,11 +24,12 @@ def login(request):
             Usu = NewLoginForm.save(commit=False)
 
             #Checar que el usuario sea Administrador
-            emailValid = Usuarios.objects.filter(Email=Usu.Email, Passwd=Usu.Passwd)
-            alumnoValid = Estudiantes.objects.filter(Correo=Usu.Email, Passwd=Usu.Passwd)
-            if emailValid.count() > 0:
+            if Usuarios.objects.filter(Email=Usu.Email, Passwd=Usu.Passwd).count() > 0:
                 return render(request, 'Index/dashboard_admin.html', context)
-            elif alumnoValid.count() > 0:
+
+            #Checar que el usuario sea Usuario
+            elif Estudiantes.objects.get(Correo=Usu.Email, Passwd=Usu.Passwd):
+                alumnoValid = Estudiantes.objects.get(Correo=Usu.Email, Passwd=Usu.Passwd)
                 context = {
                     'Estudiante': alumnoValid
                 }

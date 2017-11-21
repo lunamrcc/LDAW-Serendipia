@@ -8,3 +8,4 @@ urlpatterns =[
 # administrador/asistencias
     url(r'^$', views.assistance_lists, name='assistance_lists')
 ]
+

@@ -1,0 +1,39 @@
+{% extends 'base_alumno.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container">
+        <br>
+        <h3 class="center pink-text text-accent-2">Asistencia Registrada</h3>
+        <br> <br> <br>
+    <p>Su asistencia ha sido registrada exitosamente!</p>
+    <p>Nombre: Daniel Amezcua</p>
+    <p>Clase: Musica</p>
+    <p>Fecha: 11-19-2017 17:15:56</p>
+    <p>Localizacion: </p>
+    <div id="googleMap" style="width:80%;height:400px;"></div>
+    <br> <br> <br>
+    <button>Regresar a Clases</button>
+
+    <script>
+      function initMap() {
+        var uluru = {lat: 20.62083, lng:  -100.35216};
+        var map = new google.maps.Map(document.getElementById('googleMap'), {
+          zoom: 17,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgTqSAlpnyPSzPCfyUBMHI52Wt40MaN6g&callback=initMap"></script>
+
+
+</div>
+
+
+{% endblock content %}
