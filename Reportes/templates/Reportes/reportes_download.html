@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+    <div class="container">
+        <br>
+        <h3 class="center green-text text-accent-2"> Descarga de Reportes </h3>
+        <br> <br> <br>
+        <a href="{% url 'Reportes:export_users_csv' %}" class="waves-light btn green accent-2"><i class="material-icons right">add</i>Descargar Reporte</a>
+        <br> <br> <br>
+    </div>
+
+
+
+{% endblock content %}

@@ -33,6 +33,8 @@ urlpatterns = [
     url(r'^administrador/instituciones/', include('Instituciones.urls', namespace='instituciones')),
     url(r'^administrador/clases/', include('Clases.urls', namespace='clases')),
     url(r'^administrador/asistencia/', include('Clases.urls_assistance', namespace='asistance')),
+    url(r'^administrador/reportes/', include('Reportes.urls', namespace='reportes')),
+
 
     #SSAdmin
     url(r'^ss/', include('Index.urls_ssadmin', namespace='ssadmin')),
