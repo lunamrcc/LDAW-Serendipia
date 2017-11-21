@@ -42,6 +42,7 @@ urlpatterns = [
     url(r'^ss/clases/', include('SSClases.urls', namespace='ssclases')),
     url(r'^ss/estudiantes/', include('SSEstudiantes.urls', namespace='ssestudiantes')),
     url(r'^ss/usuarios/', include('SSUsuarios.urls', namespace='ssusuarios')),
+    url(r'^ss/asistencias/', include('Clases.urls_ssadmin', namespace='ssasistencias')),
 
 
     #alumnos

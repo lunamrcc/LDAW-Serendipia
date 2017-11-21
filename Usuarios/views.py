@@ -34,6 +34,8 @@ def login(request):
                     'Estudiante': alumnoValid
                 }
                 return render(request, 'Index/dashboard_alumno.html', context)
+            elif Usu.Email == "rloarca@hotmail.com":
+                return render(request, 'Index/dashboard_ssadmin.html', context)
 
         context = {
             'NewLoginForm': NewLoginForm

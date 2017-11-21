@@ -1,0 +1,38 @@
+{% extends 'base_ssadmin.html' %}
+
+{% block content %}
+{% load static %}
+
+    <div class="container">
+        <br>
+        <h3 class="center blue-text text-accent-2"> Ver Asistencias </h3>
+        <br> <br> <br>
+        <br> <br> <br>
+        <table class="highlight responsive-table">
+            <thead class="thead-default">
+                <tr>
+                    <th class="center-align">Nombre Alumno</th>
+                    <th class="center-align">Clase</th>
+                    <th class="center-align">Horario</th>
+                    <th class="center-align">Validacion Servicio</th>
+                    <th class="center-align">Validacion Serendipia</th>
+                    <th class="center-align">Localizacion</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                <td class="center-align">Daniel Amezcua Sanchez</td>
+                <td class="center-align">Musica</td>
+                <td class="center-align">Lun 8 - 9</td>
+                <td class="center-align"><i class="material-icons green-text">done</i></td>
+                <td class="center-align"></td>
+                <td class="center-align">
+                    <a id="location" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Ver Localizacion"
+                        href="{% url 'ssasistencias:assistance_detail' %}">
+                        <i class="material-icons red-text">add_location</i>
+                    </a>
+                </td>
+    </div>
+
+{% endblock content %}

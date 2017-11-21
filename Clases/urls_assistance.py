@@ -16,5 +16,6 @@ urlpatterns =[
 # administrador/asistencias/daniel/1
     url(r'^/1/', TemplateView.as_view(template_name='Clases/admin_assistance_confirm.html'),
         name='assistance_done'),
+
 ]
 
