@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+    <div class="container">
+        <br>
+        <h3 class="center green-text text-accent-2"> Ver Asistencias </h3>
+        <br> <br> <br>
+        <br> <br> <br>
+        <table class="highlight responsive-table">
+            <thead class="thead-default">
+                <tr>
+                    <th class="center-align">Nombre Alumno</th>
+                    <th class="center-align">Clase</th>
+                    <th class="center-align">Horario</th>
+                    <th class="center-align">Asistencia Validada</th>
+                    <th class="center-align">Localizacion</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                <td class="center-align">Daniel Amezcua Sanchez</td>
+                <td class="center-align">Musica</td>
+                <td class="center-align">Lun 8 - 9</td>
+                <td class="center-align"> </td>
+                <td class="center-align">
+                    <i class="material-icons red-text darken-1">language</i>
+                </td>
+            <div id="googleMap" style="width:80%;height:400px;"></div>
+
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('googleMap'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgTqSAlpnyPSzPCfyUBMHI52Wt40MaN6g&callback=initMap"></script>
+
+
+    </div>
+
+{% endblock content %}

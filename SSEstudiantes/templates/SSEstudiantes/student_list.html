@@ -7,7 +7,9 @@
         <br>
         <h3 class="center green-text text-accent-2"> Estudiantes </h3>
         <br> <br> <br>
+        <!--
         <a href="{% url 'Estudiantes:student_create' %}" class="waves-light btn green accent-2"><i class="material-icons right">add</i>Agregar Estudiante</a>
+        -->
         <br> <br> <br> <br>
         <table class="highlight responsive-table">
             <thead class="thead-default">
@@ -18,8 +20,8 @@
                     <th class="center-align">Telefono</th>
                     <th class="center-align">Escuela</th>
                     <th class="center-align">Correo</th>
-                    <th class="center-align">Funcionalidades</th>
-                    <th class="center-align">Activo</th>
+                   <!-- <th class="center-align">Funcionalidades</th>
+                    <th class="center-align">Activo</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +35,7 @@
                 <td class="center-align">{{student.Escuela}}</td>
                 <td class="center-align">{{student.Correo}}</td>
 
+                <!--
                 <td class="center-align">
                     <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar Estudiante"
                        href="{% url 'Estudiantes:student_update' student.pk %}">
@@ -52,7 +55,7 @@
                 <td class="center-align"><i class="material-icons green-text">done</i></td>
                 {% else %}
                 <td class="center-align"><i class="material-icons red-text">clear</i></td>
-                {% endif %}
+                {% endif %} -->
             </tr>
             {% endfor %}
 
