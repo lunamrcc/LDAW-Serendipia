@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'SSClases.apps.SsclasesConfig',
     'SSEstudiantes.apps.SsestudiantesConfig',
     'SSUsuarios.apps.SsusuariosConfig',
+    'Reportes',
 ]
 
 MIDDLEWARE = [
