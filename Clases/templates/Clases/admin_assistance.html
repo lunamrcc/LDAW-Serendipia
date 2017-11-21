@@ -1,25 +1,25 @@
-{% extends 'base_alumno.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 {% load static %}
 
 <div class="container">
         <br>
-        <h3 class="center pink-text text-accent-2">Asistencia Registrada</h3>
+        <h3 class="center green-text text-accent-2">Asistencia Daniel</h3>
         <br> <br> <br>
-    <p>Su asistencia ha sido registrada exitosamente!</p>
-    <p>Nombre: Daniel Amezcua</p>
+    <p>Asistencia de Daniel Amezcua:</p>
+    <p>Horario: Lun 8 - 9</p>
     <p>Clase: Musica</p>
     <p>Fecha: 11-19-2017 17:15:56</p>
     <p>Localizacion: </p>
     <div id="googleMap" style="width:80%;height:400px;"></div>
     <br> <br> <br>
-    <a class="waves-effect waves-light btn pink accent-2"
-       href="">Regresar a Clases</a>
+    <a class="waves-effect waves-light btn green accent-2"
+       href="{% url 'Assistance:assistance_done' %}">Validar Asistencia</a>
 
     <script>
       function initMap() {
-        var uluru = {lat: 20.62083, lng:  -100.35216};
+        var uluru = {lat: 20.62083, lng: -100.35216};
         var map = new google.maps.Map(document.getElementById('googleMap'), {
           zoom: 17,
           center: uluru

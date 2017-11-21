@@ -28,7 +28,7 @@ def login(request):
                 return render(request, 'Index/dashboard_admin.html', context)
 
             #Checar que el usuario sea Usuario
-            elif Estudiantes.objects.get(Correo=Usu.Email, Passwd=Usu.Passwd):
+            elif Estudiantes.objects.filter(Correo=Usu.Email, Passwd=Usu.Passwd).count() > 0:
                 alumnoValid = Estudiantes.objects.get(Correo=Usu.Email, Passwd=Usu.Passwd)
                 context = {
                     'Estudiante': alumnoValid
