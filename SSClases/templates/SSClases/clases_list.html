@@ -7,9 +7,9 @@
         <br>
         <h3 class="center blue-text text-accent-2"> Clases </h3>
         <br> <br> <br>
-        <!--
-        <a href="{% url 'Clases:class_create' %}" class="waves-light btn green accent-2"><i class="material-icons right">add</i>Agregar Clase</a>
-        -->
+
+        <!--<a href="{% url 'Clases:class_create' %}" class="waves-light btn blue light-2"><i class="material-icons right">add</i>Agregar Clase</a>
+-->
         <br> <br> <br>
         <table class="highlight responsive-table">
             <thead class="thead-default">
@@ -18,7 +18,7 @@
                     <th class="center-align">Descripción</th>
                     <th class="center-align">Horario</th>
                     <th class="center-align">Requisitos</th>
-                    <!--<th class="center-align">Funcionalidades</th>-->
+                    <th class="center-align">Funcionalidades</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,15 +30,12 @@
                 <td class="center-align">{{class.horario}}</td>
                 <td class="center-align">{{class.requisitos}}</td>
 
-                <!--<td class="center-align">
+                <td class="center-align">
                     <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar Clase"
-                        href="{% url 'Clases:class_update' class.pk %}">
+                        href="{% url 'SSClases:class_update' class.pk %}">
                         <i class="material-icons light-blue-text">create</i>
                     </a>&nbsp; &nbsp; &nbsp; &nbsp;
-                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Eliminar Clase"
-                       href="{% url 'Clases:class_delete' class.pk %}">
-                        <i class="material-icons red-text">delete</i>
-                    </a> &nbsp; &nbsp; &nbsp; &nbsp;-->
+                    </a> &nbsp; &nbsp; &nbsp; &nbsp;
                 </td>
             {% endfor %}
 

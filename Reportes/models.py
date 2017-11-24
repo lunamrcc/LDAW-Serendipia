@@ -1,3 +1,74 @@
 from django.db import models
+from Estudiantes.models import Estudiantes
+from Instituciones.models import Instituciones
+from Serendipia import settings
 
 # Create your models here.
+
+
+class RepoClases(models.Model):
+
+
+    nombre = models.CharField(
+        max_length = 50,
+        null = False
+    )
+
+    descripcion = models.CharField(
+        max_length = 500,
+        null = False
+    )
+
+    horario = models.CharField(
+        max_length = 100,
+        null = False
+    )
+
+    requisitos = models.CharField(
+        max_length = 500,
+        null = False
+    )
+
+    estudiantes = models.ManyToManyField(
+        Estudiantes,
+    )
+
+    institucion = models.ManyToManyField(
+        Instituciones,
+
+    )
+
+    def __str__(self):
+        return self.nombre
+
+class Reportes (models.Model):
+
+    Estudiante = models.ForeignKey(Estudiantes,
+                                   on_delete=models.CASCADE)
+
+    Clase = models.ForeignKey(RepoClases,
+                              on_delete=models.CASCADE)
+
+    Fecha = models.DateTimeField(auto_now=True)
+
+    Latitud = models.DecimalField(
+        null = False,
+        max_digits = 10,
+        decimal_places = 5
+    )
+
+    Longitud = models.DecimalField(
+        null = False,
+        max_digits = 10,
+        decimal_places = 5
+    )
+
+    Admin = models.BooleanField(
+        default=False
+    )
+
+    SS_Admin = models.BooleanField(
+        default=False
+    )
+
+
